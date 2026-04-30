@@ -1,0 +1,12 @@
+{
+    "model_type": "LightGBM",
+    "threshold": 0.52,
+    "n_features": 501,
+    "n_rows_training": 307511,
+    "artifact_files": [
+        "model.pkl",
+        "encoded_columns.json",
+        "threshold.json",
+        "model_metadata.json"
+    ]
+}
