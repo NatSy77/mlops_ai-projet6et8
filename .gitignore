@@ -1,11 +1,54 @@
+# Python
 __pycache__/
-*.pyc
-.ipynb_checkpoints/
-.env
+*.py[cod]
+*.pyo
+*.pyd
 
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables / secrets
+.env
+*.env
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Tests / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+logs/
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Data (si volumineux)
 data/raw/
 data/processed/
-models/
-mlruns/
 
-.DS_Store
+# Models (à adapter selon mon choix)
+models/
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Temporary files
+*.tmp
+*.bak
