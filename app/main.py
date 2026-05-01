@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 
 from app.schemas import ClientData, PredictionResponse
 from app.predict import predict_score
@@ -27,5 +27,12 @@ def health_check():
 
 @app.post("/predict", response_model=PredictionResponse)
 def predict(client_data: ClientData):
-    result = predict_score(client_data.features)
-    return PredictionResponse(**result)
+    try:
+        result = predict_score(client_data.features)
+        return PredictionResponse(**result)
+
+    except ValueError as error:
+        raise HTTPException(
+            status_code=400,
+            detail=str(error)
+        )

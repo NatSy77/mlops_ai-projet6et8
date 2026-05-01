@@ -34,3 +34,22 @@ def test_predict_endpoint_returns_prediction():
     assert "decision" in data
     assert "threshold" in data
     assert data["decision"] in ["accepted", "refused"]
+    
+def test_predict_wrong_number_of_features():
+    payload = {
+        "features": [0.0, 0.1]  # volontairement faux
+    }
+
+    response = client.post("/predict", json=payload)
+
+    assert response.status_code in [400, 422]
+
+
+def test_predict_wrong_type():
+    payload = {
+        "features": ["a", "b", "c"]
+    }
+
+    response = client.post("/predict", json=payload)
+
+    assert response.status_code == 422
