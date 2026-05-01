@@ -1,3 +1,12 @@
+---
+title: Credit Scoring API
+emoji: 🚀
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 7860
+---
+
 # Projet 8 - Déployez et monitorez un modèle de scoring
 
 ## Objectif
